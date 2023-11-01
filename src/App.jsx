@@ -1,6 +1,6 @@
 import data from "./data.json";
 import { Routes, Route, NavLink, Navigate } from "react-router-dom";
-import Planet from "./components/Planet";
+import Planet from "./Planet";
 import { useState } from "react";
 import styled from "styled-components";
 

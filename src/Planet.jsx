@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import data from "../data.json";
+import data from "./data.json";
 import { useState } from "react";
 import styled from "styled-components";
 
