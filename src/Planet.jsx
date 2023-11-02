@@ -5,11 +5,13 @@ import styled from "styled-components";
 
 export default function Planet() {
   const { planetName } = useParams();
+
   const planet = data.find(
     (planet) => planet.name.toLowerCase() === planetName.toLowerCase()
   );
 
   const [content, setContent] = useState(data[0].overview.content);
+  const [source, setSource] = useState(data[0].overview.source);
 
   const [viewType, setViewType] = useState("overview");
 
@@ -357,6 +359,7 @@ export default function Planet() {
               onClick={() => {
                 setViewType("overview");
                 setContent(planet.overview.content);
+                setSource(planet.overview.source);
               }}>
               <ViewText>
                 <ViewListNumber>01</ViewListNumber>
@@ -368,6 +371,7 @@ export default function Planet() {
               onClick={() => {
                 setViewType("structure");
                 setContent(planet.structure.content);
+                setSource(planet.structure.source);
               }}>
               <ViewText>
                 <ViewListNumber>02</ViewListNumber>
@@ -379,6 +383,7 @@ export default function Planet() {
               onClick={() => {
                 setViewType("surface");
                 setContent(planet.geology.content);
+                setSource(planet.geology.source);
               }}>
               <ViewText>
                 <ViewListNumber>03</ViewListNumber>Surface
@@ -405,7 +410,7 @@ export default function Planet() {
             <Content>{content}</Content>
             <Source>
               Source <span>:</span>
-              <SourceLink href={planet.overview.source}>Wikipedia </SourceLink>
+              <SourceLink href={source}>Wikipedia </SourceLink>
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12">
                 <path
                   fill="#FFF"
